@@ -1,5 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import motelActions from './actions/motelActions';
+import motelGrid from './components/motelGrid.jsx';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+setInterval(
+	function(){
+		motelActions.fetchList();
+	},
+	5000);
+
+ReactDOM.render(<motelGrid />,document.getElementById('app'));
